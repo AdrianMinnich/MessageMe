@@ -118,9 +118,9 @@ class RegisterViewController: UIViewController {
         passwordField.delegate = self
         
         view.addSubview(scrollView)
+        scrollView.addSubview(imageView)
         scrollView.addSubview(firstNameField)
         scrollView.addSubview(lastNameField)
-        scrollView.addSubview(imageView)
         scrollView.addSubview(emailField)
         scrollView.addSubview(passwordField)
         scrollView.addSubview(registerButton)
@@ -131,6 +131,8 @@ class RegisterViewController: UIViewController {
         let gesture = UITapGestureRecognizer(target: self, action: #selector(didTapChangeProfilePic))
         
         imageView.addGestureRecognizer(gesture)
+        
+        registerButton.addTarget(self, action: #selector(registerButtonTapped), for: .touchUpInside)
     }
     
     @objc private func didTapChangeProfilePic() {
@@ -177,6 +179,8 @@ class RegisterViewController: UIViewController {
     
     @objc private func registerButtonTapped() {
         
+        firstNameField.resignFirstResponder()
+        lastNameField.resignFirstResponder()
         emailField.resignFirstResponder()
         passwordField.resignFirstResponder()
         
@@ -195,19 +199,36 @@ class RegisterViewController: UIViewController {
         }
         
         // Firebase login
-        FirebaseAuth.Auth.auth().createUser(withEmail: email, password: password, completion: { authResult, error in
-            guard let result = authResult,
-                  error == nil else {
-                print("Error creating user")
+        DatabaseManager.shared.userExists(with: email, completion: { [weak self] exists in
+            guard let strongSelf = self else {
                 return
             }
-            let user = result.user
-            print("Created user: \(user)")
+            
+            guard !exists else {
+                // user already exists
+                strongSelf.alertUserLoginError(message: "Email already taken.")
+                return
+            }
+            
+            FirebaseAuth.Auth.auth().createUser(withEmail: email, password: password, completion: { authResult, error in
+                
+                guard authResult != nil,
+                      error == nil else {
+                    print("error")
+                    return
+                }
+                
+                DatabaseManager.shared.insertUser(with: ChatAppUser(firstName: firstName, lastName: lastName, emailAddress: email))
+                
+                strongSelf.navigationController?.dismiss(animated: true, completion: nil)
+            })
         })
+        
+        
     }
     
-    func alertUserLoginError() {
-        let alert = UIAlertController(title: "Woops", message: "Please enter all information to create a new account.", preferredStyle: .alert)
+    func alertUserLoginError(message: String = "Please enter all information to create a new account.") {
+        let alert = UIAlertController(title: "Woops", message: message, preferredStyle: .alert)
         
         alert.addAction(UIAlertAction(title: "Dismiss", style: .cancel, handler: nil))
         
@@ -219,14 +240,20 @@ class RegisterViewController: UIViewController {
 extension RegisterViewController: UITextFieldDelegate {
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        if textField == emailField {
+        if textField == firstNameField {
+            lastNameField.becomeFirstResponder()
+        }
+        else if textField == lastNameField {
+            emailField.becomeFirstResponder()
+        }
+        else if textField == emailField {
             passwordField.becomeFirstResponder()
         }
         else if textField == passwordField {
-            registerButtonTapped()
+            passwordField.resignFirstResponder()
         }
-        
         return true
+        
     }
 }
 

@@ -21,7 +21,8 @@
 		8422E4332651D74900675A55 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8422E4322651D74900675A55 /* ProfileViewController.swift */; };
 		8422E4362651DB0B00675A55 /* messagemelogo.png in Resources */ = {isa = PBXBuildFile; fileRef = 8422E4352651DB0B00675A55 /* messagemelogo.png */; };
 		8422E4382651DC3500675A55 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8422E4372651DC3500675A55 /* Extensions.swift */; };
-		848B2A6D2652FEDD00331B35 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 848B2A6C2652FEDD00331B35 /* GoogleService-Info.plist */; };
+		8462E18A2654278200DD3813 /* DatabaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8462E1892654278200DD3813 /* DatabaseManager.swift */; };
+		8462E18C2654367800DD3813 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8462E18B2654367800DD3813 /* GoogleService-Info.plist */; };
 		D122C022E73FD4BD13E7BB34 /* Pods_MessageMe.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 211181E8A76A6BA192600242 /* Pods_MessageMe.framework */; };
 /* End PBXBuildFile section */
 
@@ -43,7 +44,8 @@
 		8422E4322651D74900675A55 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		8422E4352651DB0B00675A55 /* messagemelogo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = messagemelogo.png; sourceTree = "<group>"; };
 		8422E4372651DC3500675A55 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
-		848B2A6C2652FEDD00331B35 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		8462E1892654278200DD3813 /* DatabaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseManager.swift; sourceTree = "<group>"; };
+		8462E18B2654367800DD3813 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		9B383274870BF01424632324 /* Pods-MessageMe.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MessageMe.release.xcconfig"; path = "Target Support Files/Pods-MessageMe/Pods-MessageMe.release.xcconfig"; sourceTree = "<group>"; };
 		DAF450CEB4FFCB33F1645E62 /* Pods-MessageMe.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MessageMe.debug.xcconfig"; path = "Target Support Files/Pods-MessageMe/Pods-MessageMe.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -90,7 +92,7 @@
 		8422E40D2651B9A300675A55 /* MessageMe */ = {
 			isa = PBXGroup;
 			children = (
-				848B2A6C2652FEDD00331B35 /* GoogleService-Info.plist */,
+				8462E18B2654367800DD3813 /* GoogleService-Info.plist */,
 				8422E4262651D5C100675A55 /* Resources */,
 				8422E4252651D5AD00675A55 /* ViewModels */,
 				8422E4242651D59800675A55 /* Models */,
@@ -144,6 +146,7 @@
 				8422E40E2651B9A300675A55 /* AppDelegate.swift */,
 				8422E4102651B9A300675A55 /* SceneDelegate.swift */,
 				8422E4372651DC3500675A55 /* Extensions.swift */,
+				8462E1892654278200DD3813 /* DatabaseManager.swift */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -235,7 +238,7 @@
 			files = (
 				8422E4362651DB0B00675A55 /* messagemelogo.png in Resources */,
 				8422E41B2651B9A800675A55 /* LaunchScreen.storyboard in Resources */,
-				848B2A6D2652FEDD00331B35 /* GoogleService-Info.plist in Resources */,
+				8462E18C2654367800DD3813 /* GoogleService-Info.plist in Resources */,
 				8422E4182651B9A800675A55 /* Assets.xcassets in Resources */,
 				8422E4162651B9A300675A55 /* Main.storyboard in Resources */,
 			);
@@ -291,6 +294,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8422E4292651D6DC00675A55 /* LoginViewController.swift in Sources */,
+				8462E18A2654278200DD3813 /* DatabaseManager.swift in Sources */,
 				8422E42B2651D6EF00675A55 /* RegisterViewController.swift in Sources */,
 				8422E4312651D73500675A55 /* NewConversationViewController.swift in Sources */,
 				8422E4132651B9A300675A55 /* ConversationsViewController.swift in Sources */,

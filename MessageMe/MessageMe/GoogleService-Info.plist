@@ -29,6 +29,8 @@
 	<key>IS_SIGNIN_ENABLED</key>
 	<true></true>
 	<key>GOOGLE_APP_ID</key>
-	<string>1:95105235422:ios:f9a7c0ff80f423e070c54f</string>
+	<string>1:95105235422:ios:6338d5477368686070c54f</string>
+	<key>DATABASE_URL</key>
+	<string>https://messageme-40442-default-rtdb.europe-west1.firebasedatabase.app</string>
 </dict>
 </plist>
