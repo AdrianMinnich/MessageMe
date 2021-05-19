@@ -19,7 +19,6 @@
 		8422E42F2651D71800675A55 /* VideoPlayerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8422E42E2651D71800675A55 /* VideoPlayerViewController.swift */; };
 		8422E4312651D73500675A55 /* NewConversationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8422E4302651D73500675A55 /* NewConversationViewController.swift */; };
 		8422E4332651D74900675A55 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8422E4322651D74900675A55 /* ProfileViewController.swift */; };
-		8422E4362651DB0B00675A55 /* messagemelogo.png in Resources */ = {isa = PBXBuildFile; fileRef = 8422E4352651DB0B00675A55 /* messagemelogo.png */; };
 		8422E4382651DC3500675A55 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8422E4372651DC3500675A55 /* Extensions.swift */; };
 		8462E18A2654278200DD3813 /* DatabaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8462E1892654278200DD3813 /* DatabaseManager.swift */; };
 		8462E18C2654367800DD3813 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8462E18B2654367800DD3813 /* GoogleService-Info.plist */; };
@@ -42,7 +41,6 @@
 		8422E42E2651D71800675A55 /* VideoPlayerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoPlayerViewController.swift; sourceTree = "<group>"; };
 		8422E4302651D73500675A55 /* NewConversationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewConversationViewController.swift; sourceTree = "<group>"; };
 		8422E4322651D74900675A55 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
-		8422E4352651DB0B00675A55 /* messagemelogo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = messagemelogo.png; sourceTree = "<group>"; };
 		8422E4372651DC3500675A55 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		8462E1892654278200DD3813 /* DatabaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseManager.swift; sourceTree = "<group>"; };
 		8462E18B2654367800DD3813 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
@@ -142,7 +140,6 @@
 		8422E4262651D5C100675A55 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				8422E4352651DB0B00675A55 /* messagemelogo.png */,
 				8422E40E2651B9A300675A55 /* AppDelegate.swift */,
 				8422E4102651B9A300675A55 /* SceneDelegate.swift */,
 				8422E4372651DC3500675A55 /* Extensions.swift */,
@@ -189,6 +186,7 @@
 				8422E4082651B9A300675A55 /* Frameworks */,
 				8422E4092651B9A300675A55 /* Resources */,
 				573F20C1B524D10F244A8AC2 /* [CP] Embed Pods Frameworks */,
+				CE3082ECCB382A0EDA423BEB /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -236,7 +234,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8422E4362651DB0B00675A55 /* messagemelogo.png in Resources */,
 				8422E41B2651B9A800675A55 /* LaunchScreen.storyboard in Resources */,
 				8462E18C2654367800DD3813 /* GoogleService-Info.plist in Resources */,
 				8422E4182651B9A800675A55 /* Assets.xcassets in Resources */,
@@ -284,6 +281,23 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-MessageMe/Pods-MessageMe-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		CE3082ECCB382A0EDA423BEB /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-MessageMe/Pods-MessageMe-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-MessageMe/Pods-MessageMe-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-MessageMe/Pods-MessageMe-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
